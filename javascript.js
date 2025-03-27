@@ -1,30 +1,33 @@
-const div1 = document.createElement("div");
-const div2 = document.createElement("div");
-div2.textContent = "hello";
-div2.style.backgroundColor = "white"
-const div3 = document.createElement("div");
-const div4 = document.createElement("div"); // Fixed duplicate declaration
-const div5 = document.createElement("div");
-const div6 = document.createElement("div");
-const div7 = document.createElement("div");
-const div8 = document.createElement("div");
-const div9 = document.createElement("div");
-const div10 = document.createElement("div");
-const div11 = document.createElement("div");
-const div12 = document.createElement("div");
-const div13 = document.createElement("div");
-const div14 = document.createElement("div");
-const div15 = document.createElement("div");
-const div16 = document.createElement("div");
+let color = "black";
 
-const divContent = document.createElement("div");
-divContent.classList.add("content");
+function populateBoard (size){
+let board = document.querySelector (".board");
+let squares = board.querySelectorAll("div");
+squares.forEach((div) => div.remove());
+board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+board.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
-// Append all created divs to divContent
-[
-    div1, div2, div3, div4, div5, div6, div7, div8,
-    div9, div10, div11, div12, div13, div14, div15, div16
-].forEach(div => divContent.appendChild(div));
+let amount = size * size
+for (let i = 0; i < amount; i++){
+    let square = document.createElement("div");
+    square.addEventListener("mouseover", colorSquare);
+    square.style.backgroundColor = "lightGray";
+    board.insertAdjacentElement("beforeend", square);
+}
+}
+populateBoard(4);
 
-// Append divContent to the body (or another container)
-document.body.appendChild(divContent);
+function changeSize(input){
+    if (input >= 2 && input <= 100) {
+    populateBoard(input);
+} else {
+    console.log("too many squares");
+}
+}
+function colorSquare(){
+this.style.backgroundColor = color;
+}
+
+function changeColor(choice) {
+color = choice;
+}

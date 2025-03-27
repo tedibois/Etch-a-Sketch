@@ -5,26 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>etch a sketch</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/reset.css">
 </head>
 <body>
     <h1>etch a sketch</h1>
     <div class="content">
-    <div id="div1"></div>
-    <div id="div2"></div>
-    <div id="div3"></div>
-    <div id="div4"></div>
-    <div id="div5"></div>
-    <div id="div6"></div>
-    <div id="div7"></div>
-    <div id="div8"></div>
-    <div id="div9"></div>
-    <div id="div10"></div>
-    <div id="div11"></div>
-    <div id="div12"></div>
-    <div id="div13"></div>
-    <div id="div14"></div>
-    <div id="div15"></div>
-    <div id="div16"></div>
+    <div class="board"></div>
+    <div class="buttons">
+        <button onclick="changeColor=('black')">black</button>
+        <button onclick="changeColor=('white')">white</button>
+        <button onclick="changeColor=('green')">gray</button>
+        <button onclick="changeColor=('red')">red</button>
+        <button onclick="changeColor=('blue')">blue</button>
+        <button onclick="changeColor=('green')">green</button>
+        <button onclick="changeColor=('')">reset</button>
+    </div>
+    <div>
+        <input
+        type="text"
+        placeholder=" size of board"
+        value="16"
+        onchange="changeSize(this.value)"
+        />
+    <button>Set Size</button>
+    </div>
+</div>
+</div>
+
+<div class="footer">
+    <p>huge thanks to <a href="https://www.youtube.com/@codingwithrob">"Coding With Rob"</a> </p>
 </div>
 </body>
 <script src="javascript.js"></script>
