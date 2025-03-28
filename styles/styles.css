@@ -3,10 +3,16 @@ body{
     font-size: 30px;
     text-align: center; 
 }
+.boardParent{
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
 .board{
   width: 500px;
   height: 500px;
   display: grid;
+  
 }
 .footer{
 font-size: 15px;
